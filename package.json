@@ -31,12 +31,13 @@
     "url": "git+https://github.com/adligo/fab_group.ts.adligo.org.git"
   },
   "scripts": {
-    "git-clone": "node git-clone.cjs",
+    "build": "node buildSrc/build.cjs",
+    "git-clone": "node buildSrc/git-clone.cjs",
     "git-clone-ssh": "node buildSrc/git-clone.cjs --ssh",
-	"setup": "node buildSrc/setup.cjs",
-	"test": "node buildSrc/test.cjs",
-	"rm": "node buildSrc/rm.cjs",
-	"tsc": "tsc"
+    "setup": "node buildSrc/setup.cjs",
+    "test": "node buildSrc/test.cjs",
+    "rm": "node buildSrc/rm.cjs",
+    "tsc": "tsc"
   },
   "type": "module",
   "version": "1.0.7"

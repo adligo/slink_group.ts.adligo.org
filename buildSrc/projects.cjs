@@ -14,7 +14,8 @@
   * limitations under the License.l
   */
  
-projects = ['junitXml.tests4j.ts.adligo.org','junitXml_tests.tests4j.ts.adligo.org','slink.ts.adligo.org',
+projects = ['i_obj.ts.adligo.org','i_strings.ts.adligo.org','i_io.ts.adligo.org',
+	'junitXml.tests4j.ts.adligo.org','junitXml_tests.tests4j.ts.adligo.org','slink.ts.adligo.org',
 	'slink_tests.ts.adligo.org','tests4ts.ts.adligo.org','tests4ts_tests.ts.adligo.org'];
 	
 module.exports = [projects];
