@@ -35,7 +35,7 @@
     "git-clone": "node buildSrc/git-clone.cjs",
     "git-clone-ssh": "node buildSrc/git-clone.cjs --ssh",
     "setup": "node buildSrc/setup.cjs",
-    "test": "node buildSrc/test.cjs",
+    "tests": "node buildSrc/tests.cjs",
     "rm": "node buildSrc/rm.cjs",
     "tsc": "tsc"
   },
