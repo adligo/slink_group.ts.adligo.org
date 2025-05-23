@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [projects] = require('./projects.cjs');
+const [Project, projects] = require('./projects.cjs');
 /**
   * Copyright 2023 Adligo Inc / Scott Morgan
   *
@@ -31,5 +31,5 @@ for (var i=0; i < args.length; i++) {
 
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
-	run2('git',['clone',base + 'adligo/' + project + '.git']);		
+	run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
 }

@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [projects] = require('./projects.cjs');
+const [Project, projects] = require('./projects.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
@@ -36,7 +36,7 @@ function getOpts(dir) {
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
   console.log('setup.cjs running slink on project ' + project);
-	run3('slink',['--debug'], getOpts(project));		
+	run3('slink',['--debug'], getOpts(project.getName()));
 }
 
 module.exports = [getOpts];

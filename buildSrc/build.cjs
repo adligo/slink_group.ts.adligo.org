@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [projects] = require('./projects.cjs');
+const [Project, projects] = require('./projects.cjs');
 const [getOpts] = require('./setup.cjs');
 /**
  * This must be run from the root (aka ..) directory.
@@ -22,5 +22,7 @@ const [getOpts] = require('./setup.cjs');
 run2('pwd',[]);
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
-	run3('npm',['run', 'build'], getOpts(project));		
+	if (project.isBuildable()) {
+		run3('npm', ['run', 'build'], getOpts(project.getName()));
+	}
 }

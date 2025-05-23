@@ -18,5 +18,5 @@ const [projects] = require('./projects.cjs');
  
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
-	run2('rm',['-fr',project]);		
+	run2('rm',['-fr',project.getName()]);
 }

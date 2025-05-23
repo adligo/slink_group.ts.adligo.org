@@ -13,9 +13,30 @@
   * See the License for the specific language governing permissions and
   * limitations under the License.l
   */
- 
-projects = ['i_obj.ts.adligo.org','i_strings.ts.adligo.org','i_io.ts.adligo.org',
-	'junitXml.tests4j.ts.adligo.org','junitXml_tests.tests4j.ts.adligo.org','slink.ts.adligo.org',
-	'slink_tests.ts.adligo.org','tests4ts.ts.adligo.org','tests4ts_tests.ts.adligo.org'];
+
+class Project {
+	name;
+	buildable = false;
+	hasTestsInternal = false;
+
+	constructor(name, buildable, hasTests) {
+		this.name = name;
+		if (buildable != undefined) {
+			this.buildable = buildable;
+		}
+		if (hasTests != undefined) {
+			this.hasTestsInternal = hasTests;
+		}
+	}
+
+	getName() { return this.name; }
+	isBuildable() { return this.buildable; }
+	hasTests()  { return this.hasTestsInternal; }
+
+}
+projects = [new Project('i_obj.ts.adligo.org'),new Project('i_strings.ts.adligo.org'),new Project('i_io.ts.adligo.org'),
+	new Project('junitXml.tests4j.ts.adligo.org', true),new Project('junitXml_tests.tests4j.ts.adligo.org', true, true),
+	new Project('slink.ts.adligo.org', true), new Project('slink_tests.ts.adligo.org', true, true),
+	new Project('tests4ts.ts.adligo.org', true),new Project('tests4ts_tests.ts.adligo.org', true, true)];
 	
-module.exports = [projects];
+module.exports = [Project, projects];
