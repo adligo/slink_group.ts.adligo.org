@@ -23,6 +23,6 @@ run2('pwd',[]);
 for (var i=0; i < projects.length; i++) {
     let project = projects[i];
     if (project.hasTests()) {
-        run3('npm', ['run', 'test'], getOpts(project.getName()));
+        run3('npm', ['run', 'tests'], getOpts(project.getName()));
     }
 }
