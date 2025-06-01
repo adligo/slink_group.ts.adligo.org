@@ -24,3 +24,19 @@ Then run the tests.
 ```
 npm run test
 ```
+
+### Alternativly you can use commands like this to build and test slink;
+
+```
+cd slink.ts.adligo.org
+npm run install
+npm run build
+```
+
+```
+cd slink_tests.ts.adligo.org
+npm run install
+npm run tests
+or
+npm run testsWindows
+```

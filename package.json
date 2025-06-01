@@ -37,6 +37,7 @@
     "setup": "node buildSrc/setup.cjs",
     "tests": "node buildSrc/tests.cjs",
     "rm": "node buildSrc/rm.cjs",
+    "rmNm": "node buildSrc/rmNm.cjs",
     "tsc": "tsc"
   },
   "type": "module",
