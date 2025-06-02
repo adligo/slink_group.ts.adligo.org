@@ -1,5 +1,6 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
 const [Project, projects] = require('./projects.cjs');
+const [getOpts] = require('./getOpts.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
@@ -19,24 +20,10 @@ const [Project, projects] = require('./projects.cjs');
   * limitations under the License.
   */
 //run('pwd',[], getOpts('log2.ts.adligo.org'})
-function getOpts(dir) {
-	var obj = {};
-	if (dir != undefined) {
-		obj = new Object();
-		obj.cwd = dir;
-	}
-	if (process.env.USHELL != undefined) {
-		console.log("USHELL is " + process.env.USHELL);
-		obj.shell = process.env.USHELL
-	}
-  console.log('setup.cjs getOpts returning ' + JSON.stringify(obj));
-	return obj;
-}
+
 
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
   console.log('setup.cjs running slink on project ' + JSON.stringify(project));
 	run3('slink',[], getOpts(project.getName()));
 }
-
-module.exports = [getOpts];

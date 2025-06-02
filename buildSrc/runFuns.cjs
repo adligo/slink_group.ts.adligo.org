@@ -33,17 +33,22 @@ function out(cmd, spawnSyncReturns, options) {
   }
 
   console.log('\tand the spawnSyncReturns had;');
-  if (spawnSyncReturns.error != undefined) {
-    Error.captureStackTrace(spawnSyncReturns.error);
-    console.log('\tError: ' + spawnSyncReturns.error.message);
-    console.log('\tCause: ' + spawnSyncReturns.cause);
-    process.exit(1);
-  }
+
   if (spawnSyncReturns.stderr != undefined) {
     console.log('\tStderr: ' + spawnSyncReturns.stderr);
   }
   if (spawnSyncReturns.stdout != undefined) {
     console.log('\tStdout: ' + spawnSyncReturns.stdout);
+  }
+  if (spawnSyncReturns.error) {
+    console.log('\tError: ' + spawnSyncReturns.error.message);
+    if (spawnSyncReturns.error.stack) {
+      console.log('\tStack: ' + spawnSyncReturns.error.stack);
+    }
+  }
+  if (spawnSyncReturns.status !== 0 && spawnSyncReturns.status !== null) {
+    console.log('\tExit Code: ' + spawnSyncReturns.status);
+    process.exit(spawnSyncReturns.status); // Propagate failure from child process
   }
 }
 
