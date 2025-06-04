@@ -1,6 +1,6 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
 const [Project, projects] = require('./projects.cjs');
-const [getOpts] = require('./setup.cjs');
+const [getOpts] = require('./getOpts.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
