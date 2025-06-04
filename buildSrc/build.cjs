@@ -19,10 +19,11 @@ const [getOpts] = require('./getOpts.cjs');
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-run2('pwd',[]);
-for (var i=0; i < projects.length; i++) {
-	let project = projects[i];
-	if (project.isBuildable()) {
-		run3('npm', ['run', 'build'], getOpts(project.getName()));
-	}
+run2('pwd', []);
+for (var i = 0; i < projects.length; i++) {
+  let project = projects[i];
+  if (project.isBuildable()) {
+    console.debug('\n\nBuilding ' + project.getName());
+    run3('npm', ['run', 'build'], getOpts(project.getName()));
+  }
 }
