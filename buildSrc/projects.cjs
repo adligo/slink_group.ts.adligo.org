@@ -34,9 +34,10 @@ class Project {
   hasTests() { return this.hasTestsInternal; }
 
 }
-projects = [new Project('i_obj.ts.adligo.org'), new Project('i_strings.ts.adligo.org'), new Project('i_io.ts.adligo.org'),
+projects = [new Project('i_obj.ts.adligo.org', true), new Project('i_strings.ts.adligo.org', true), new Project('i_io.ts.adligo.org', true),
+new Project('i_tests4ts.ts.adligo.org', true),
 new Project('tests4ts.ts.adligo.org', true), new Project('tests4ts_tests.ts.adligo.org'),
-new Project('junitXml.tests4j.ts.adligo.org', true), new Project('junitXml_tests.tests4j.ts.adligo.org', true, true),
+new Project('junit-xml-tests4j.ts.adligo.org', true), new Project('junitXml_tests.tests4j.ts.adligo.org', true, true),
 new Project('slink.ts.adligo.org', true), new Project('slink_tests.ts.adligo.org', true, true)];
 
 module.exports = [Project, projects];
