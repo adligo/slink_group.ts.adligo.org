@@ -40,3 +40,7 @@ npm run tests
 or
 npm run testsWindows
 ```
+
+### Jenkins
+
+[Building SLink on Jenkins](https://github.com/adligo/slink_docker.ts.adligo.org/jenkins)
