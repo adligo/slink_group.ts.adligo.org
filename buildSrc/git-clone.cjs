@@ -1,7 +1,8 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
 const [Project, projects] = require('./projects.cjs');
+const fs = require("fs");
 /**
-  * Copyright 2023 Adligo Inc / Scott Morgan
+  * Copyright 2025 Adligo Inc / Scott Morgan
   *
   * Licensed under the Apache License, Version 2.0 (the "License");
   * you may not use this file except in compliance with the License.
@@ -30,6 +31,10 @@ for (var i=0; i < args.length; i++) {
 }
 
 for (var i=0; i < projects.length; i++) {
-	let project = projects[i];
-	run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+  let project = projects[i];
+  if (fs.existsSync(project.getName())) {
+    console.log(project.getName() + ' appears to already have been cloned')
+  } else {
+    run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+  }
 }
