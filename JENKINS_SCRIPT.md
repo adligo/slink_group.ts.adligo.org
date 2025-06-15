@@ -19,6 +19,7 @@ echo npm is `npm -v`
 export COMMON_NODE_MODULES=/var/jenkins_home/workspace/slink_group_deps.ts.adligo.org/slink_group_deps.ts.adligo.org/node_modules
 export TESTS4TS_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export JUNIT_XML_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
+export OBJ_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export SLINK_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 
 echo $BUILD_NUMBER
