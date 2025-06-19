@@ -35,7 +35,8 @@ class Project {
 
 }
 projects = [new Project('i_obj.ts.adligo.org', true), new Project('i_strings.ts.adligo.org', true), new Project('i_io.ts.adligo.org', true),
-new Project('i_tests4ts.ts.adligo.org', true),
+  new Project('i_tests4ts_types.ts.adligo.org', true),
+  new Project('i_tests4ts.ts.adligo.org', true),
 new Project('type-guards.ts.adligo.org', true), 
 new Project('tests4ts.ts.adligo.org', true), 
 new Project('junit-xml-tests4j.ts.adligo.org', true), 
