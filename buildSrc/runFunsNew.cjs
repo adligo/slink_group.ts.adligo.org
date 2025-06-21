@@ -91,20 +91,5 @@ function runWith(cmd, args, options) {
   }
 }
 
-function run3(cmd, args, options) {
-  //console.log("hmm run 3 params ")
-  console.log("hmm in run3 options are " + options)
-  runWith(cmd, args, options);
-}
 
-function run2(cmd, args) {
-  //console.log("hmm run 2 params ")
-  runWith(cmd, args, undefined);
-}
-
-function run1(cmd) {
-  //console.log("hmm run 1 params ")
-  runWith(cmd, [], undefined);
-}
-
-module.exports = [run1, run2, run3];
+module.exports = runWith;

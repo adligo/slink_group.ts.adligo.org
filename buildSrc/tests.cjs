@@ -1,6 +1,6 @@
-const [run1, run2, run3] = require('./runFuns.cjs');
+const runWith = require('./runFunsNew.cjs');
 const projects = require('./projects.cjs');
-const [getOpts] = require('./getOpts.cjs');
+const getOpts = require('./getOpts.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
@@ -19,10 +19,10 @@ const [getOpts] = require('./getOpts.cjs');
   * See the License for the specific language governing permissions and
   * limitations under the License.
   */
-run2('pwd',[]);
+runWith('pwd',[]);
 for (var i=0; i < projects.length; i++) {
     let project = projects[i];
     if (project.hasTests()) {
-        run3('npm', ['run', 'tests'], getOpts(project.getName()));
+        runWith('npm', ['run', 'tests'], getOpts(project.getName()));
     }
 }

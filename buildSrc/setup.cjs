@@ -1,6 +1,6 @@
-const [run1, run2, run3] = require('./runFuns.cjs');
+const runWith = require('./runFunsNew.cjs');
 const projects = require('./projects.cjs');
-const [getOpts] = require('./getOpts.cjs');
+const getOpts = require('./getOpts.cjs');
 /**
  * This must be run from the root (aka ..) directory.
  * 
@@ -22,8 +22,8 @@ const [getOpts] = require('./getOpts.cjs');
 //run('pwd',[], getOpts('log2.ts.adligo.org'})
 
 
-for (var i=0; i < projects.length; i++) {
-	let project = projects[i];
+for (var i = 0; i < projects.length; i++) {
+  let project = projects[i];
   console.log('setup.cjs running slink on project ' + JSON.stringify(project));
-	run3('slink',[], getOpts(project.getName()));
+  runWith('slink', [], getOpts(project.getName()));
 }
