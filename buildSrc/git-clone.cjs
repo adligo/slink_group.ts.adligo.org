@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [Project, projects] = require('./projects.cjs');
+const projects = require('./projects.cjs');
 const fs = require("fs");
 /**
   * Copyright 2025 Adligo Inc / Scott Morgan

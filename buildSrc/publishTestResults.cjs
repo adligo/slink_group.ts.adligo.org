@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const [Project, projects] = require('./projects.cjs');
+const projects = require('./projects.cjs');
 
 /**
  * Collects JUnit XML files from all projects and copies them to depot/test-results

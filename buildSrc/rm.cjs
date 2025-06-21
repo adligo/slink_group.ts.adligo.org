@@ -1,5 +1,5 @@
 const [run1, run2, run3] = require('./runFuns.cjs');
-const [projects] = require('./projects.cjs');
+const projects  = require('./projects.cjs');
 /**
   * Copyright 2025 Adligo Inc / Scott Morgan
   *
@@ -16,7 +16,12 @@ const [projects] = require('./projects.cjs');
   * limitations under the License.
   */
  
+console.log('removing ' + projects.length + ' projects ...');
+console.log(JSON.stringify(projects));
+
 for (var i=0; i < projects.length; i++) {
 	let project = projects[i];
+
+  console.log('removing project ' + JSON.stringify(project));
 	run2('rm',['-fr',project.getName()]);
 }
