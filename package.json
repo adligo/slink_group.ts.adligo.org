@@ -33,6 +33,7 @@
   "scripts": {
     "build": "node buildSrc/build.cjs",
     "git-clone": "node buildSrc/git-clone.cjs",
+    "git-clone-local": "node buildSrc/git-clone-local.cjs",
     "git-clone-ssh": "node buildSrc/git-clone.cjs --ssh",
     "setup": "node buildSrc/setup.cjs",
     "tests": "node buildSrc/tests.cjs && node buildSrc/publishTestResults.cjs",
