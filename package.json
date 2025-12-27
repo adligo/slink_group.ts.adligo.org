@@ -31,14 +31,14 @@
     "url": "git+https://github.com/adligo/fab_group.ts.adligo.org.git"
   },
   "scripts": {
-    "build": "node buildSrc/build.cjs",
-    "git-clone": "node buildSrc/git-clone.cjs",
-    "git-clone-local": "node buildSrc/git-clone-local.cjs",
-    "git-clone-ssh": "node buildSrc/git-clone.cjs --ssh",
-    "setup": "node buildSrc/setup.cjs",
-    "tests": "node buildSrc/tests.cjs && node buildSrc/publishTestResults.cjs",
-    "rm": "node buildSrc/rm.cjs",
-    "rmNm": "node buildSrc/rmNm.cjs",
+    "build": "node --disable-warning=DEP0190 buildSrc/build.cjs",
+    "git-clone": "node --disable-warning=DEP0190 buildSrc/git-clone.cjs",
+    "git-clone-local": "node --disable-warning=DEP0190 buildSrc/git-clone-local.cjs",
+    "git-clone-ssh": "node --disable-warning=DEP0190 buildSrc/git-clone.cjs --ssh",
+    "setup": "node --disable-warning=DEP0190 buildSrc/setup.cjs",
+    "tests": "node --disable-warning=DEP0190 buildSrc/tests.cjs && node buildSrc/publishTestResults.cjs",
+    "rm": "node --disable-warning=DEP0190 buildSrc/rm.cjs",
+    "rmNm": "node --disable-warning=DEP0190 buildSrc/rmNm.cjs",
     "tsc": "tsc"
   },
   "type": "module",
