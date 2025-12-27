@@ -28,6 +28,6 @@ for (var i=0; i < projects.length; i++) {
   if (fs.existsSync(project.getName())) {
     console.log(project.getName() + ' appears to already have been cloned')
   } else {
-    run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+    run2('git',['clone',base + project.getName() + '.git']);
   }
 }
