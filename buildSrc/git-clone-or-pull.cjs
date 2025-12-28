@@ -1,6 +1,7 @@
-const [run1, run2, run3] = require('./runFuns.cjs');
+const runWith = require('./runFunsNew.cjs');
 const projects = require('./projects.cjs');
 const fs = require("fs");
+const getOpts = require('./getOpts.cjs');
 /**
   * Copyright 2025 Adligo Inc / Scott Morgan
   *
@@ -17,7 +18,9 @@ const fs = require("fs");
   * limitations under the License.
   */
 var base =  'https://github.com/';
-var args = []
+var args = [];
+var pull = false;
+
 if (process.argv != undefined) {
 	args = process.argv;
 }
@@ -25,16 +28,21 @@ console.log('Base is ' + base + ' checking cli arguments; \n' + args);
 for (var i=0; i < args.length; i++) {
   let arg = args[i];
   console.log('With argument ' + arg);
-  if (arg == '--ssh') {
-    base = 'git@github.com:'
+  switch (arg) {
+    case '--ssh': base = 'git@github.com:'; break;
+    case '--pull': pull = true; break;
   }
 }
 
 for (var i=0; i < projects.length; i++) {
   let project = projects[i];
   if (fs.existsSync(project.getName())) {
-    console.log(project.getName() + ' appears to already have been cloned')
+    if (pull) {
+      runWith('git',['pull'], getOpts(project.getName()));
+    } else {
+      console.log(project.getName() + ' appears to already have been cloned');
+    }
   } else {
-    run2('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+    runWith('git',['clone',base + 'adligo/' + project.getName() + '.git']);
   }
 }

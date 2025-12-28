@@ -1,4 +1,7 @@
-
+#
+# @See instructions @ https://github.com/adligo/slink_bm.ts.adligo.org/blob/main/docs/BUILD_IN_JENKINS_FROM_GITHUB.md
+#
+export COMMON_NODE_MODULES=/somePath 
 
 
 export BUN_HOME=/opt/bun
@@ -16,7 +19,6 @@ bun -v
 echo nodejs is `node -v`
 echo npm is `npm -v`
 
-export COMMON_NODE_MODULES=/var/jenkins_home/workspace/slink_group_deps.ts.adligo.org/slink_group_deps.ts.adligo.org/node_modules
 export TESTS4TS_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export JUNIT_XML_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
 export OBJ_NODE_MODULE_SLINK=$COMMON_NODE_MODULES
@@ -26,7 +28,9 @@ echo $BUILD_NUMBER
 pwd
 mkdir $BUILD_NUMBER
 cd $BUILD_NUMBER
-git clone https://github.com/adligo/slink_group.ts.adligo.org
+REPO=https://github.com/adligo/slink_group.ts.adligo.org.git
+echo cloning from $REPO
+git clone $REPO
 cd slink_group.ts.adligo.org
 
 #
@@ -40,4 +44,4 @@ npm run tests
 
 
 # Then Publish JUnit test result report with ;
-$BUILD_NUMBER/slink_group.ts.adligo.org/depot/test-results/*.xml
+# $BUILD_NUMBER/slink_group.ts.adligo.org/depot/test-results/*.xml
