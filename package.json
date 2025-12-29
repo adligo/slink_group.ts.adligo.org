@@ -34,7 +34,7 @@
     "build": "node --disable-warning=DEP0190 buildSrc/build.cjs",
     "git-clone": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs",
     "git-clone-or-pull": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs --pull",
-    "git-clone-local": "node --disable-warning=DEP0190 buildSrc/git-clone-local.cjs",
+    "git-clone-or-pull-local": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs --local --pull",
     "git-clone-ssh": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs --ssh",
     "setup": "node --disable-warning=DEP0190 buildSrc/setup.cjs",
     "tests": "node --disable-warning=DEP0190 buildSrc/tests.cjs && node buildSrc/publishTestResults.cjs",

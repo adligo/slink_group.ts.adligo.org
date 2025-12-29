@@ -24,6 +24,6 @@ for (var i = 0; i < projects.length; i++) {
   let project = projects[i];
   if (project.isBuildable()) {
     console.debug('\n\nBuilding ' + project.getName());
-    runWith('npm', ['--disable-warning=DEP0190', 'run', 'build'], getOpts(project.getName()));
+    runWith('npm', ['run', 'build'], getOpts(project.getName()));
   }
 }

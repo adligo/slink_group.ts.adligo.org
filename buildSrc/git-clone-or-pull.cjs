@@ -20,6 +20,7 @@ const getOpts = require('./getOpts.cjs');
 var base =  'https://github.com/';
 var args = [];
 var pull = false;
+var localRepoRoot="";
 
 if (process.argv != undefined) {
 	args = process.argv;
@@ -30,6 +31,7 @@ for (var i=0; i < args.length; i++) {
   console.log('With argument ' + arg);
   switch (arg) {
     case '--ssh': base = 'git@github.com:'; break;
+    case '--LOCAL_REPOSITORY_ROOT': localRepoRoot = args[i+1]; break;
     case '--pull': pull = true; break;
   }
 }
@@ -43,6 +45,10 @@ for (var i=0; i < projects.length; i++) {
       console.log(project.getName() + ' appears to already have been cloned');
     }
   } else {
-    runWith('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+    if (localRepoRoot === "") {
+      runWith('git',['clone',base + 'adligo/' + project.getName() + '.git']);
+    } else {
+      runWith('git',['clone',localRepoRoot + project.getName() + '.git']);
+    }
   }
 }
