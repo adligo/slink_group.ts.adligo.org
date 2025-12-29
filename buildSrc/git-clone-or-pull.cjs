@@ -48,7 +48,7 @@ for (var i=0; i < projects.length; i++) {
     if (localRepoRoot === "") {
       runWith('git',['clone',base + 'adligo/' + project.getName() + '.git']);
     } else {
-      runWith('git',['clone',localRepoRoot + project.getName() + '.git']);
+      runWith('git',['clone',localRepoRoot + project.getName()]);
     }
   }
 }
