@@ -42,7 +42,6 @@
     "rmNm": "node --disable-warning=DEP0190 buildSrc/rmNm.cjs",
     "tsc": "tsc"
   },
-  
   "type": "module",
   "version": "1.0.7"
 }
