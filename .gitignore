@@ -67,3 +67,14 @@ replay_pid*
 /depot/*
 
 /.classpath
+/cli.ts.adligo.org
+/cli_tests.ts.adligo.org
+/ctx.ts.adligo.org
+/ctx_tests.ts.adligo.org
+/fm.ts.adligo.org
+/fm_tests.ts.adligo.org
+/i_cli.ts.adligo.org
+/i_ctx.ts.adligo.org
+/i_log2.ts.adligo.org
+/log2.ts.adligo.org
+/log2_tests.ts.adligo.org
