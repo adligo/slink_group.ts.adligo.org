@@ -34,10 +34,14 @@ class Project {
   hasTests() { return this.hasTestsInternal; }
 
 }
-const projects = [new Project('i_obj.ts.adligo.org', true), new Project('i_strings.ts.adligo.org', true), 
-new Project('i_io.ts.adligo.org', true),
+const projects = [new Project('i_ctx.ts.adligo.org', false),new Project('i_cli.ts.adligo.org', false),
+  new Project('i_obj.ts.adligo.org', true), new Project('i_strings.ts.adligo.org', true), 
+new Project('i_io.ts.adligo.org', true), new Project('i_log2.ts.adligo.org', true),
 new Project('i_tests4ts_types.ts.adligo.org', true),
 new Project('i_tests4ts.ts.adligo.org', true),
+//actual code
+new Project('ctx.ts.adligo.org', false),new Project('cli.ts.adligo.org', false),
+new Project('log2.ts.adligo.org', true),
 new Project('type-guards.ts.adligo.org', true), 
 new Project('tests4ts.ts.adligo.org', true), 
 new Project('junit-xml-tests4j.ts.adligo.org', true), 
@@ -45,7 +49,11 @@ new Project('junit-xml-tests4j.ts.adligo.org', true),
 new Project('tests4ts_tests.ts.adligo.org', true, true),
 new Project('type-guards_tests.ts.adligo.org', true, true), 
 new Project('junit-xml-tests4j_tests.ts.adligo.org', true, true),
-new Project('slink.ts.adligo.org', true), new Project('slink_tests.ts.adligo.org', true, true)];
+new Project('log2_tests.ts.adligo.org', true),
+new Project('ctx_tests.ts.adligo.org', false),new Project('cli_tests.ts.adligo.org', false),
+new Project('slink.ts.adligo.org', true), new Project('slink_tests.ts.adligo.org', true, true),
+new Project('fm.ts.adligo.org', true), new Project('fm_tests.ts.adligo.org', false, false)
+];
 
 Object.freeze(projects);
 console.log('There are ' + projects.length + ' projects');

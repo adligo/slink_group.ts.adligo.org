@@ -5,11 +5,14 @@ To clone the sub projects run;
 
 ```
 npm run git-clone-ssh
+or
+npm run git-clone
 ```
 
 Then run the following command to link the node_modules to the install in slink_group_deps.ts.adligo.org.
 
 ```
+npm i -g typescript
 npm run setup
 ```
 
