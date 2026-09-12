@@ -1,7 +1,7 @@
 {
   "author": "Scott Morgan",
   "bugs": {
-    "url": "https://github.com/adligo/fab_group.ts.adligo.org/issues"
+    "url": "https://github.com/adligo/slink_group.ts.adligo.org/issues"
   },
   "description": "This is a simple wrapper project for building fabricate (fab.ts.adligo.org).",
   "dependencies": {
@@ -36,12 +36,12 @@
     "git-clone-or-pull": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs --pull",
     "git-clone-or-pull-local": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs --local --pull",
     "git-clone-ssh": "node --disable-warning=DEP0190 buildSrc/git-clone-or-pull.cjs --ssh",
-    "setup": "node --disable-warning=DEP0190 buildSrc/setup.cjs",
+    "setup": "npm config set script-shell bash && node --disable-warning=DEP0190 buildSrc/setup.cjs",
     "tests": "node --disable-warning=DEP0190 buildSrc/tests.cjs && node buildSrc/publishTestResults.cjs",
     "rm": "node --disable-warning=DEP0190 buildSrc/rm.cjs",
     "rmNm": "node --disable-warning=DEP0190 buildSrc/rmNm.cjs",
     "tsc": "tsc"
   },
   "type": "module",
-  "version": "1.0.7"
+  "version": "1.7.0"
 }
